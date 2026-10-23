@@ -19,7 +19,7 @@
     "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
     "status": "OBSOLETE_DO_NOT_SUBMIT_SHARED_CAPACITY_BUG"
   },
-  "releaseCommit": "PENDING_CORRECTED_SOURCE_COMMIT",
+  "releaseCommit": "3a81bcfd6d341897bbb08a03ba3dd3400d5dc5ec",
   "transactions": [],
   "liveReadbacks": [],
   "testedAt": "2026-10-23"
