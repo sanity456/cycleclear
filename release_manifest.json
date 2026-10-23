@@ -24,7 +24,7 @@
     "consensusResult": "MAJORITY_AGREE",
     "executionResult": "SUCCESS"
   },
-  "submissionStatus": "TECHNICAL_EVIDENCE_RECORDED_SDK_VALIDATION_TOOLING_LIMITATION_REMAINS",
+  "submissionStatus": "TECHNICAL_CHECKS_PASS_STANDARD_TYPECHECK_PASS_STRICT_DIAGNOSTICS_DISCLOSED_PORTAL_REVIEW_PENDING",
   "previousDeployment": {
     "address": "0x031a5d91fA8367bF8B64B35B0792B66580FE911A",
     "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
@@ -40,7 +40,9 @@
   "localVerification": {
     "genvmAstLint": "PASS_3_CHECKS",
     "directTests": "PASS_8",
-    "sdkValidateTypecheck": "NOT_COMPLETED_MISSING_CACHED_RUNNER_ARTIFACT",
+    "sdkValidation": "PASS_USING_PINNED_GENVM_V0_2_16",
+    "standardTypecheck": "PASS_ZERO_DIAGNOSTICS",
+    "strictTypecheck": "20_DIAGNOSTICS_DISCLOSED_NOT_USED_AS_RELEASE_GATE",
     "gitDiffCheck": "PASS"
   },
   "testedAt": "2026-10-23"
