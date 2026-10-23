@@ -16,4 +16,4 @@ GenLayer classifies semantic fit from the participants' declared descriptions. C
     genvm-lint typecheck contracts/cycle_clear.py --strict
     python -m pytest tests/direct -q -p no:cacheprovider
 
-The earlier deployment used the vulnerable shared registry and must not be submitted. The corrected source is under local verification; deployment, source-byte comparison, and refreshed live abuse evidence are still required. See `STUDIONET_EVIDENCE.md`, `release_manifest.json`, and `SUBMISSION_CHECKLIST.md` for the release gate status.
+The earlier deployment used the vulnerable shared registry; do not submit it. The corrected source is deployed at `0x57AECF347f700dFEc106A19CCcD62D793DEf189C`, and its deployed bytes were verified against the corrected source. Live evidence is recorded in `STUDIONET_EVIDENCE.md` and `release_manifest.json`. SDK validate/typecheck remains incomplete because the local cached runner archive is missing a nested artifact; see `SUBMISSION_CHECKLIST.md` and clear that tooling gate before submission.
