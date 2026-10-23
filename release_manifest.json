@@ -1,0 +1,20 @@
+{
+  "contract": "CycleClear",
+  "network": {
+    "name": "GenLayer StudioNet",
+    "chainId": "61999",
+    "rpc": "https://studio.genlayer.com/api"
+  },
+  "contractAddress": "0x031a5d91fA8367bF8B64B35B0792B66580FE911A",
+  "deploymentTransaction": "0xf9d1b44d2dc53bdcf8dfe62439d6225fb8f92fbd37bca2332e9f5041ac33cbe3",
+  "deploymentStatus": "FINALIZED",
+  "deploymentExecution": "SUCCESS",
+  "sourcePath": "contracts/cycle_clear.py",
+  "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
+  "sourceMatchedDeployedCode": true,
+  "repositoryUrl": "https://github.com/sanity456/cycleclear",
+  "commit": null,
+  "submissionStatus": "PUBLIC_REPOSITORY_PORTAL_EVIDENCE_PENDING",
+  "evidenceFile": "STUDIONET_EVIDENCE.md",
+  "testedAt": "2026-10-23"
+}
