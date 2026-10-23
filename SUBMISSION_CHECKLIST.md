@@ -7,6 +7,7 @@
 - [x] StudioNet deployment finalized; deployed source matches local source
 - [x] Live three-party cycle assessed, unanimously accepted, and read back as `CLEARED`
 - [x] Local StudioNet transaction and source-hash evidence recorded in `STUDIONET_EVIDENCE.md`
+- [x] Successful assessment receipt independently visible in public StudioNet Explorer
 - [x] Publish repository publicly and record repository URL and source-release commit in `release_manifest.json`
 - [ ] Add/verify required GitHub Repository, Studio Contract, and Explorer Contract evidence links in the Portal while logged out
 - [ ] Recheck that every submitted link is accessible and the source at the submitted commit matches the deployed source

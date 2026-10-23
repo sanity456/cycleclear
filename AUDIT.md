@@ -21,7 +21,7 @@ Scope: `contracts/cycle_clear.py` and its tests. This is an engineering review, 
 
 - Public source repository: https://github.com/sanity456/cycleclear. The release manifest records the repository and source-release commit.
 - Evidence URLs must be entered and checked in the Portal while logged out. This local evidence file is not a substitute for Portal evidence.
-- One successful assessment transaction hash was not captured in the CLI output during a long wait; the resulting on-chain state was read back and verified. Do not cite the subsequent duplicate assessment attempt as evidence—it finalized with a leader execution error after the round had already advanced.
+- The successful assessment transaction hash was recovered from public Explorer history and added to `STUDIONET_EVIDENCE.md`. Do not cite the subsequent duplicate assessment attempt as evidence—it finalized with a leader execution error after the round had already advanced.
 - The live demonstration is a smoke test, not exhaustive validator/model testing. Semantic agreement can vary; participant claims, ownership, item condition, delivery, and legal suitability are not verified.
 
 ## Known limits
