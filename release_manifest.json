@@ -24,7 +24,7 @@
     "consensusResult": "MAJORITY_AGREE",
     "executionResult": "SUCCESS"
   },
-  "submissionStatus": "TECHNICAL_CHECKS_PASS_STANDARD_TYPECHECK_PASS_STRICT_DIAGNOSTICS_DISCLOSED_PORTAL_REVIEW_PENDING",
+  "submissionStatus": "TECHNICAL_AND_LIVE_EVIDENCE_PASS_STANDARD_TYPECHECK_PASS_STRICT_DIAGNOSTICS_DISCLOSED_PORTAL_REVIEW_PENDING",
   "previousDeployment": {
     "address": "0x031a5d91fA8367bF8B64B35B0792B66580FE911A",
     "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
@@ -35,7 +35,21 @@
     {"name": "creator_A_capacity_01", "transaction": "0x2f6ae3dd6c4903fb6d47f4c104509350e1a808cb921a187f4ce0c5f6960fa714", "status": "FINALIZED", "executionResult": "SUCCESS"},
     {"name": "creator_B_same_local_id_namespace_isolation", "transaction": "0x0e9ee67ce205f5aad48c5516e1884555f7decfa9eb6af32b0db26f3afe4c171b", "status": "FINALIZED", "executionResult": "SUCCESS"},
     {"name": "open_fixed_roster_test_round", "transaction": "0xa4c9124e10bdafb3d6db17a91be177450de13b5c9053bd232bd315eabb4af4bc", "status": "FINALIZED", "executionResult": "SUCCESS"},
-    {"name": "uninvited_registration_rejected", "transaction": "0x915f70da11fd23ba5a4fb55e1af20e5b45fc2a8ae3d526bbef4bba2e49350e32", "status": "FINALIZED", "executionResult": "ERROR_EXPECTED_FAIL_CLOSED"}
+    {"name": "uninvited_registration_rejected", "transaction": "0x915f70da11fd23ba5a4fb55e1af20e5b45fc2a8ae3d526bbef4bba2e49350e32", "status": "FINALIZED", "executionResult": "ERROR_EXPECTED_FAIL_CLOSED"},
+    {"name": "open_completed_three_person_round", "transaction": "0x24d511c7a0734fa886292207afbae51e653e385cca8240556d38b9634ed43f25", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [5, 5, 1, 1, 1]},
+    {"name": "register_owner_intent", "transaction": "0xafb4c7e59434b69405e5ae8b08563906d233177d574782090edf601cd620cd2d", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [5, 1, 5, 1, 1]},
+    {"name": "register_participant_2_intent", "transaction": "0xebbcba7f46c1cc7f4754b1658dc1b94a56ef03d8afc83ba947f3fa288c9f5ef6", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 5, 5, 1, 1]},
+    {"name": "register_participant_3_intent", "transaction": "0xfbd6b0b2f8c4e5c0317b59d90baf1a0904569a317b6538943a8ecab076293681", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 5, 1, 5, 1]},
+    {"name": "freeze_completed_three_person_round", "transaction": "0x0234fe85d8fa15e54827a48507c2593749c2c6e683318a7268bbdf7c09dd9205", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 1, 5, 1, 5]},
+    {"name": "assess_six_pairwise_edges_and_select_cycle", "transaction": "0xa496089f9b00091ee273d5b33b5f9d758dcc8d12062c9970dc00a38c5036b76c", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [5, 1, 5, 1, 1]},
+    {"name": "owner_accept_cycle", "transaction": "0x7732f2d0f798420b5e125f69ae7e7acd8de3e468c0897cbb6d08e802e391872d", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 5, 1, 5, 1]},
+    {"name": "participant_2_accept_cycle", "transaction": "0x9aeaffb06324dde5e7abc68bc63caf340d18ac5f3d9c4f2fa7e30676c02986ef", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 1, 1, 1, 1]},
+    {"name": "participant_3_accept_and_clear_cycle", "transaction": "0x1165249d629e5e7d505f36b7af6d2d9809e3f00cfe191f530d348155d969da79", "status": "FINALIZED", "executionResult": "SUCCESS", "votes": [1, 1, 1, 1, 1]}
+  ],
+  "liveReadbacks": [
+    "Round review_cycle_20261023 has three invited participants and three stored intents.",
+    "Assessment judged six directed pairs: exactly three FITS formed the selected three-participant cycle; the other three reverse/pairwise edges were DOES_NOT_FIT.",
+    "All three selected participants accepted; final round status CLEARED and all acceptance flags were true."
   ],
   "localVerification": {
     "genvmAstLint": "PASS_3_CHECKS",

@@ -22,6 +22,24 @@ All listed transactions finalized. Expected rejection tests produced execution `
 | Open fixed-roster test round | `0xa4c9124e10bdafb3d6db17a91be177450de13b5c9053bd232bd315eabb4af4bc` | SUCCESS |
 | Uninvited registration | `0x915f70da11fd23ba5a4fb55e1af20e5b45fc2a8ae3d526bbef4bba2e49350e32` | Expected ERROR; readback confirmed participant list remained empty |
 
+## Completed three-person exchange
+
+The corrected deployment completed one full three-person round on 2026-10-23. The three offers were a cordless drill, folding step ladder, and drill-bit set; each participant needed the next participant's item. The validator judged all six directed pairs: exactly three `FITS` edges formed the selected cycle, while all reverse/pairwise edges were `DOES_NOT_FIT`. The selected cycle included all three invited wallets. Each acceptance finalized successfully and the final `get_round` readback was `CLEARED` with all three acceptances true.
+
+| Step | Explorer transaction | Status / execution / votes |
+| --- | --- | --- |
+| Open `review_cycle_20261023` | https://explorer-studio.genlayer.com/tx/0x24d511c7a0734fa886292207afbae51e653e385cca8240556d38b9634ed43f25 | FINALIZED / SUCCESS / `[5,5,1,1,1]` |
+| Register owner intent | https://explorer-studio.genlayer.com/tx/0xafb4c7e59434b69405e5ae8b08563906d233177d574782090edf601cd620cd2d | FINALIZED / SUCCESS / `[5,1,5,1,1]` |
+| Register participant 2 intent | https://explorer-studio.genlayer.com/tx/0xebbcba7f46c1cc7f4754b1658dc1b94a56ef03d8afc83ba947f3fa288c9f5ef6 | FINALIZED / SUCCESS / `[1,5,5,1,1]` |
+| Register participant 3 intent | https://explorer-studio.genlayer.com/tx/0xfbd6b0b2f8c4e5c0317b59d90baf1a0904569a317b6538943a8ecab076293681 | FINALIZED / SUCCESS / `[1,5,1,5,1]` |
+| Freeze round | https://explorer-studio.genlayer.com/tx/0x0234fe85d8fa15e54827a48507c2593749c2c6e683318a7268bbdf7c09dd9205 | FINALIZED / SUCCESS / `[1,1,5,1,5]` |
+| Assess pairwise fits and select cycle | https://explorer-studio.genlayer.com/tx/0xa496089f9b00091ee273d5b33b5f9d758dcc8d12062c9970dc00a38c5036b76c | FINALIZED / SUCCESS / `[5,1,5,1,1]` |
+| Owner accepts | https://explorer-studio.genlayer.com/tx/0x7732f2d0f798420b5e125f69ae7e7acd8de3e468c0897cbb6d08e802e391872d | FINALIZED / SUCCESS / `[1,5,1,5,1]` |
+| Participant 2 accepts | https://explorer-studio.genlayer.com/tx/0x9aeaffb06324dde5e7abc68bc63caf340d18ac5f3d9c4f2fa7e30676c02986ef | FINALIZED / SUCCESS / `[1,1,1,1,1]` |
+| Participant 3 accepts and clears round | https://explorer-studio.genlayer.com/tx/0x1165249d629e5e7d505f36b7af6d2d9809e3f00cfe191f530d348155d969da79 | FINALIZED / SUCCESS / `[1,1,1,1,1]` |
+
+Final readback key: `0xd0bfe06a010bb6167838ad3ee07a5d30d27906fc|review_cycle_20261023`; status `CLEARED`; three acceptances true. No physical delivery or ownership was verified; the contract records a coordination result only.
+
 Local verification: GenVM AST lint passed (3 checks); SDK validation passed; standard typecheck passed with zero diagnostics; direct tests passed (8 tests). Strict Pyright mode reports 20 diagnostics, primarily redundant runtime type guards and unknown types from dynamic/SDK APIs; it is stricter than the standard check and does not indicate an SDK validation failure. No contract source was changed for these optional strict-mode diagnostics. `git diff --check` passed. No reviewer outcome is guaranteed.
 
 ## Obsolete deployment — do not submit
