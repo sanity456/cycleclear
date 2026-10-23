@@ -5,16 +5,22 @@
     "chainId": "61999",
     "rpc": "https://studio.genlayer.com/api"
   },
-  "contractAddress": "0x031a5d91fA8367bF8B64B35B0792B66580FE911A",
-  "deploymentTransaction": "0xf9d1b44d2dc53bdcf8dfe62439d6225fb8f92fbd37bca2332e9f5041ac33cbe3",
-  "deploymentStatus": "FINALIZED",
-  "deploymentExecution": "SUCCESS",
-  "sourcePath": "contracts/cycle_clear.py",
-  "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
-  "sourceMatchedDeployedCode": true,
   "repositoryUrl": "https://github.com/sanity456/cycleclear",
-  "commit": "0f9ce311f036a6e06b07362bcb8933569019871a",
-  "submissionStatus": "PUBLIC_REPOSITORY_PORTAL_EVIDENCE_PENDING",
-  "evidenceFile": "STUDIONET_EVIDENCE.md",
+  "correctedSource": {
+    "sourcePath": "contracts/cycle_clear.py",
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+    "sourceSha256": "2af57c37d9c50639225cb2cd474905e0c12c079639f6b62e4002f3073e3cd56d",
+    "deploymentStatus": "NOT_DEPLOYED",
+    "sourceMatchedDeployedCode": false
+  },
+  "submissionStatus": "BLOCKED_CORRECTED_SOURCE_NOT_DEPLOYED",
+  "previousDeployment": {
+    "address": "0x031a5d91fA8367bF8B64B35B0792B66580FE911A",
+    "sourceSha256": "8BBC3AFAB6451B1C1CEEBA340F6DF28D6A2C9EE380472E68A038F4141DD91FEA",
+    "status": "OBSOLETE_DO_NOT_SUBMIT_SHARED_CAPACITY_BUG"
+  },
+  "releaseCommit": "PENDING_CORRECTED_SOURCE_COMMIT",
+  "transactions": [],
+  "liveReadbacks": [],
   "testedAt": "2026-10-23"
 }

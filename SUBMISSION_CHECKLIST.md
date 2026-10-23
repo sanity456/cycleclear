@@ -1,15 +1,15 @@
 # Submission checklist
 
 - [x] Standalone bounded contract with a mechanism distinct from workspace projects
+- [x] Fixed shared lifetime-cap exhaustion: separate creator namespaces/allowances and frozen invite roster
 - [x] Pinned GenVM runner and source provenance
 - [x] Static GenVM lint and semantic validation pass
-- [x] Strict typecheck reports zero errors/warnings; direct tests: 4 passed
-- [x] StudioNet deployment finalized; deployed source matches local source
-- [x] Live three-party cycle assessed, unanimously accepted, and read back as `CLEARED`
-- [x] Local StudioNet transaction and source-hash evidence recorded in `STUDIONET_EVIDENCE.md`
-- [x] Successful assessment receipt independently visible in public StudioNet Explorer
+- [x] Strict typecheck reports zero errors/warnings with informational SDK typing notices; direct tests: 8 passed
+- [ ] Deploy corrected source and verify raw deployed bytes against the pushed Git blob
+- [ ] Demonstrate isolated creator capacity, rejection of an uninvited registrant, and successful invited cycle on StudioNet
+- [ ] Record fresh transaction receipts, execution results, and read-backs for the corrected deployment
 - [x] Publish repository publicly and record repository URL and source-release commit in `release_manifest.json`
-- [ ] Add/verify required GitHub Repository, Studio Contract, and Explorer Contract evidence links in the Portal while logged out
-- [ ] Recheck that every submitted link is accessible and the source at the submitted commit matches the deployed source
+- [ ] Add/verify GitHub Repository, GitHub source file, release manifest, and Explorer contract/transaction links in the Portal while logged out
+- [ ] Recheck every submitted link anonymously and ensure the source file is pinned to the corrected deployment commit
 
-This is not submission-ready until the public-source and Portal-evidence items are complete. No reviewer outcome is guaranteed.
+The old deployment is not submission-ready. Do not resubmit it. Submission readiness depends on every corrected deployment/evidence gate above; no reviewer outcome is guaranteed.

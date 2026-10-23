@@ -4,25 +4,28 @@ Scope: `contracts/cycle_clear.py` and its tests. This is an engineering review, 
 
 ## Findings and controls
 
+- **Fixed before corrected deployment:** the initial shared deployment allowed anyone to consume the single deployment-wide 20-round allowance and allowed unsolicited wallets to occupy any round's six participant slots. This was a submission blocker. The corrected source namespaces rounds by creator, assigns a separate 20-round lifetime allowance to each creator, and freezes an explicit 3–6 wallet invite list when opening a round. The old deployment does not contain these fixes and must not be submitted.
+
 - The contract builds a directed compatibility graph, selects one deterministic longest simple cycle of at least three participants, and clears only after every selected participant accepts.
 - Participant membership is frozen before semantic assessment. The leader and validators each check a complete, ordered edge list with closed labels; deterministic code—not the model—selects the cycle and enforces lifecycle transitions.
-- Inputs, participant count, round count, and graph search are bounded. No goods or funds are held or transferred.
+- Inputs, participant count, per-creator round count, and graph search are bounded. No goods or funds are held or transferred.
 - Workspace comparison identifies this as distinct from bilateral matching and source-to-need allocation: it requires a closed multi-party ring and unanimous acceptance.
 
-## Verification performed (2026-10-23)
+## Verification performed locally (2026-10-23)
 
 - `genvm-lint check` passes with the pinned `py-genlayer` runner `1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6`, using the compatible GenVM `v0.2.16` bundle.
 - `genvm-lint typecheck --strict`: zero errors and zero warnings. Pyright emits informational unknown-type notices for GenLayer's dynamic nondeterministic APIs.
-- Direct tests: 4 passed.
-- StudioNet deployment finalized successfully. The Explorer/CLI source read-back matches the local contract source (normalized for line endings and trailing newline).
-- Live StudioNet flow: three newly created, distinct participant accounts registered a barter cycle; the assessment produced a three-member cycle; all three accepted; `get_round` read-back reported `CLEARED` with all acceptances true. Transaction receipts were checked for successful execution, not only lifecycle status.
+- GenVM lint/SDK validation passes for the corrected source with the pinned runner.
+- Direct tests: 8 passed, including independent owner capacities, same-name namespace isolation, fixed invite enforcement, forged validator output, and terminal-state replay.
+- **Not yet verified:** no corrected StudioNet deployment or live abuse demonstration has been run. Prior deployment and receipts cover the vulnerable source only.
 
 ## Remaining submission gates
 
 - Public source repository: https://github.com/sanity456/cycleclear. The release manifest records the repository and source-release commit.
-- Evidence URLs must be entered and checked in the Portal while logged out. This local evidence file is not a substitute for Portal evidence.
-- The successful assessment transaction hash was recovered from public Explorer history and added to `STUDIONET_EVIDENCE.md`. Do not cite the subsequent duplicate assessment attempt as evidence—it finalized with a leader execution error after the round had already advanced.
-- The live demonstration is a smoke test, not exhaustive validator/model testing. Semantic agreement can vary; participant claims, ownership, item condition, delivery, and legal suitability are not verified.
+- Push the corrected source, deploy that exact pushed revision, and verify its raw source bytes against the public Git blob.
+- Demonstrate live that one creator cannot consume another's round allowance, an uninvited wallet cannot register, and valid invited participants can complete a round.
+- Refresh every manifest receipt/read-back and Portal evidence link to the corrected deployment. Existing address/transaction links demonstrate only the old vulnerable source.
+- Verify all final evidence links anonymously. Semantic agreement can vary; participant claims, ownership, item condition, delivery, and legal suitability are not verified.
 
 ## Known limits
 
